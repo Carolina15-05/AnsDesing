@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AnsDesingn | Sobre Mi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="img/logo.png" alt="Logo AnsDesingn" class="logo">
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html" class="active">Sobre Mi</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container sobre-mi">
+    <h1>Sobre AnsDesingn</h1>
+    <p>AnsDesingn es un estudio de diseño de interiores dedicado a crear espacios personalizados, funcionales y estéticamente coherentes con el estilo de vida de cada cliente. Nos enfocamos en la planificación, la elección de materiales y la ejecución del proyecto para lograr resultados únicos.</p>
+
+    <div class="sobre-grid">
+      <div class="sobre-card">
+        <h3>Nuestro método</h3>
+        <p>Diagnóstico, propuesta, selección de materiales y seguimiento de obra.</p>
+      </div>
+      <div class="sobre-card">
+        <h3>Visión</h3>
+        <p>Lograr espacios que transmitan calma, funcionalidad y personalidad.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 AnsDesingn. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle?.addEventListener('click', () => {
+      links.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

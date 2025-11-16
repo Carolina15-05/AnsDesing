@@ -1,0 +1,44 @@
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>Completá el formulario para ponerte en contacto con <strong>AnsDesign</strong>.</p>
+
+  <form class="contact-form" id="contactForm" action="#" method="post">
+    <!-- campos del formulario -->
+  </form>
+
+  <div class="contact-info">
+    <!-- datos de contacto -->
+  </div>
+</section>
+
+<!-- SCRIPT CAPTCHA solo aquí -->
+<script>
+  const captchaText = document.getElementById('captcha-text');
+  const refreshBtn = document.getElementById('refresh-captcha');
+  const form = document.getElementById('contactForm');
+
+  function generarCaptcha() {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let code = '';
+    for (let i = 0; i < 5; i++) {
+      code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    captchaText.textContent = code;
+  }
+
+  refreshBtn.addEventListener('click', generarCaptcha);
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const userCaptcha = document.getElementById('captcha').value.toUpperCase();
+    if (userCaptcha === captchaText.textContent) {
+      alert('Formulario enviado correctamente. ¡Gracias por contactarte con AnsDesingn!');
+      form.reset();
+      generarCaptcha();
+    } else {
+      alert('El código de verificación no coincide. Por favor, intentá nuevamente.');
+    }
+  });
+
+  generarCaptcha();
+</script>

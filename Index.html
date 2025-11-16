@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AnsDesingn | Diseño de interiores</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Quicksand:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="img/Logo.png" alt="Logo AnsDesingn" class="logo">
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre Mi</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Transformamos espacios en hogares únicos</h1>
+          <p>Diseño de interiores que refleja tu esencia y estilo de vida.</p>
+          <div class="cta-group">
+            <a href="proyectos.html" class="btn">Ver proyectos</a>
+            <a href="contacto.html" class="btn btn-outline">Solicitar asesoría</a>
+          </div>
+        </div>
+        <div class="hero-img">
+          <img src="img/Portada.png" alt="Imagen de espacio diseñado">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN DE PROYECTOS ===== -->
+    <section class="preview container">
+      <h2>Proyectos destacados</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="img/Proyectos/Proyecto1.jpg" alt="Proyecto Buen Viaje">
+          <h3>Proyecto Buen Viaje</h3>
+          <p>Reforma integral con atención en la funcionalidad.</p>
+        </article>
+        <article class="card">
+          <img src="img/Proyectos/Proyecto2.jpg" alt="Proyecto Lavalle">
+          <h3>Proyecto Lavalle</h3>
+          <p>Intervención en living y comedor con estética cálida.</p>
+        </article>
+        <article class="card">
+          <img src="img/Proyectos/Proyecto3.jpg" alt="Proyecto Giribone">
+          <h3>Proyecto Giribone</h3>
+          <p>Baño y suite principal en estilo contemporáneo.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN DE CONTACTO ===== -->
+    <section id="contacto" class="contacto contact-section">
+      <h2>Contacto</h2>
+      <p>Completá el formulario para ponerte en contacto con <strong>AnsDesign</strong> o solicitar una asesoría personalizada.</p>
+
+      <form class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tu@mail.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 1234 5678">
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Escribí tu consulta o mensaje aquí" required></textarea>
+        </div>
+
+        <!-- CAPTCHA simple opcional -->
+        <div class="form-group">
+          <label for="captcha">¿Cuánto es 3 + 4?</label>
+          <input type="text" id="captcha" name="captcha" placeholder="Respuesta" required>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <div class="contact-info">
+        <h3>Ubicación</h3>
+        <p>Galería Central, Local 12 — Ciudad Autónoma de Buenos Aires</p>
+
+        <h3>Teléfono</h3>
+        <p>+54 9 11 5657 7491</p>
+
+        <h3>Email</h3>
+        <p>ansargiotto@gmail.com</p>
+
+        <h3>Redes</h3>
+        <p><a href="https://www.instagram.com/ansdesignn">@AnsDesignn</a> (Instagram)</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 AnsDesingn. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ================= JS MENÚ MÓVIL ================= -->
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle?.addEventListener('click', () => {
+      links.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

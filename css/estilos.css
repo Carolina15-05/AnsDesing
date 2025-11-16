@@ -1,0 +1,345 @@
+/* ===========================
+   ESTILOS ANSDESIGN
+   =========================== */
+
+/* PALETA DE COLORES */
+:root {
+  --fondo: #E4E2DD;
+  --rosado: #85566B;
+  --borgoña: #5A0000;
+  --oscuro: #474747;
+  --gris: #A8A7A5;
+  --morado: #6a0dad;
+  --morado-oscuro: #580a9e;
+}
+
+/* TIPOGRAFÍAS */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Quicksand:wght@400;600&family=Montserrat:wght@300;400;600&display=swap');
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--oscuro);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+}
+
+/* CONTENEDOR GENERAL */
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+/* ===========================
+   HEADER / NAVBAR
+   =========================== */
+.site-header {
+  background: var(--fondo);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 120px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  color: var(--oscuro);
+  background: var(--gris);
+  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: var(--rosado);
+  color: #fff;
+}
+
+.nav-links a.active {
+  background: var(--borgoña);
+  color: #fff;
+}
+
+/* ===========================
+   HERO / INICIO
+   =========================== */
+.hero {
+  padding: 4rem 0 3rem;
+}
+
+.hero-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  color: var(--borgoña);
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--oscuro);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 5px;
+  background: var(--rosado);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--borgoña);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--rosado);
+  color: var(--rosado);
+}
+
+.btn-outline:hover {
+  background: var(--rosado);
+  color: #fff;
+}
+
+.hero-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   SECCIONES INTERNAS
+   =========================== */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--borgoña);
+}
+
+.preview, .sobre-mi, .proyectos, .servicios, .contacto {
+  padding: 3rem 0;
+}
+
+/* Tarjetas */
+.cards, .galeria, .servicios-grid {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card, .galeria-card, .servicio-card {
+  background: var(--gris);
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1 1 280px;
+  min-width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover, .galeria-card:hover, .servicio-card:hover {
+  transform: translateY(-5px);
+}
+
+.card img, .galeria-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+}
+
+/* Sobre Mi */
+.sobre-grid {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.sobre-card {
+  background: var(--gris);
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1;
+}
+
+/* ===========================
+   FORMULARIO DE CONTACTO
+   =========================== */
+.contacto {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.contact-form {
+  background-color: #fafafa;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #444;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 15px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--morado);
+  box-shadow: 0 0 6px rgba(106, 13, 173, 0.3);
+  outline: none;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: var(--morado);
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--morado-oscuro);
+}
+
+.contact-info {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.contact-info h3 {
+  margin-top: 20px;
+  color: var(--rosado);
+}
+
+.contact-info a {
+  color: var(--morado);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.site-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1.8rem 0;
+  color: var(--oscuro);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    flex-direction: column;
+    background: var(--fondo);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 

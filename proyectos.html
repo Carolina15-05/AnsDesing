@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AnsDesingn | Proyectos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="img/Logo.png" alt="Logo AnsDesingn" class="logo">
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre Mi</a></li>
+          <li><a href="proyectos.html" class="active">Proyectos</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container proyectos">
+    <h1>Proyectos</h1>
+    <p>Algunos trabajos recientes.</p>
+
+    <section class="galeria">
+      <article class="galeria-card">
+        <img src="img/Proyectos/Proyecto1.jpg" alt="Proyecto Buen Viaje">
+        <h3>Proyecto Buen Viaje</h3>
+        <p>Reforma integral enfocada en optimizar la circulación y luz natural.</p>
+        <a class="btn" href="contacto.html">Contáctanos</a>
+      </article>
+
+      <article class="galeria-card">
+        <img src="img/Proyectos/Proyecto2.jpg" alt="Proyecto Lavalle">
+        <h3>Proyecto Lavalle</h3>
+        <p>Intervención en living y comedor con paleta cálida.</p>
+        <a class="btn" href="contacto.html">Contáctanos</a>
+      </article>
+
+      <article class="galeria-card">
+        <img src="img/Proyectos/Proyecto3.jpg" alt="Proyecto Giribone">
+        <h3>Proyecto Giribone</h3>
+        <p>Baño y suite principal con diseño contemporáneo.</p>
+        <a class="btn" href="contacto.html">Contáctanos</a>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 AnsDesingn. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle?.addEventListener('click', () => {
+      links.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
