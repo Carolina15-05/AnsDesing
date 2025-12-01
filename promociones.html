@@ -2,43 +2,115 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Promociones</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promociones | AnsDesign</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
 
-  <header>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="promociones.html" class="active">Promociones</a>
-    </nav>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="img/Logo.png" alt="Logo AnsDesingn" class="logo">
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre Mi</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="promociones.html" class="active">Promociones</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="promo-page">
-    <h1>Promociones</h1>
-    <p>Ofertas actualizadas para vos.</p>
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="container">
 
-    <div class="promo-grid">
+    <h1 class="titulo-promos">Promociones disponibles</h1>
 
-      <div class="promo-card">
-        <h3>Promo 2x1</h3>
-        <p>Llevate dos al precio de uno. Válido esta semana.</p>
+    <!-- GRID PROMOS -->
+    <div class="promo-grid-page">
+
+      <!-- PROMO 1 -->
+      <div class="promo-item">
+        <img src="img/promos/render50.png" alt="Promo 50%">
+        <h2>2do Render al 50%</h2>
+        <p>Llevate el segundo render al 50% OFF. Ideal para proyectos dobles.  
+        <br>Precio por render: $25.000 ARS</p>
       </div>
 
-      <div class="promo-card">
-        <h3>Descuento del 20%</h3>
-        <p>Aplícalo en productos seleccionados.</p>
-      </div>
-
-      <div class="promo-card">
-        <h3>Combo especial</h3>
-        <p>Combinalo con productos a elección a un precio reducido.</p>
+      <!-- PROMO 2 -->
+      <div class="promo-item">
+        <img src="img/promos/velas3x2.png" alt="Promo velas 3x2">
+        <h2>3x2 en Velas de Decoración</h2>
+        <p>Llevate 3 velas y pagás solo 2.  
+        <br>Precio por unidad: $12.000 ARS</p>
       </div>
 
     </div>
+
+    <!-- CALCULADORA -->
+    <section class="calculadora">
+      <h2>Calculadora de precio</h2>
+
+      <label for="promoSelect">Elegí una promoción:</label>
+      <select id="promoSelect">
+        <option value="">Seleccionar promoción</option>
+        <option value="render">2do Render al 50%</option>
+        <option value="velas">3x2 en Velas</option>
+      </select>
+
+      <!-- CANTIDAD -->
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad" min="1" value="1">
+
+      <button id="calcularBtn">Calcular total</button>
+
+      <p class="resultado">Total: <span id="totalPrecio">$0</span></p>
+    </section>
+
   </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 AnsDesingn. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JS CALCULADORA -->
+  <script>
+    document.getElementById("calcularBtn").addEventListener("click", function() {
+      const promo = document.getElementById("promoSelect").value;
+      const cantidad = parseInt(document.getElementById("cantidad").value);
+
+      let total = 0;
+
+      if (promo === "render") {
+        const precio = 25000;
+        if (cantidad >= 2) {
+          total = precio + (precio * 0.5) + (precio * (cantidad - 2));
+        } else {
+          total = precio * cantidad;
+        }
+      }
+
+      if (promo === "velas") {
+        const precio = 12000;
+        const grupos = Math.floor(cantidad / 3);
+        const resto = cantidad % 3;
+        total = (grupos * 2 * precio) + (resto * precio);
+      }
+
+      document.getElementById("totalPrecio").innerText = "$" + total.toLocaleString("es-AR");
+    });
+  </script>
 
 </body>
 </html>
