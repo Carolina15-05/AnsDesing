@@ -1,44 +1,87 @@
-<section id="contacto">
-  <h2>Contacto</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | AnsDesign</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <img src="img/Logo.png" alt="Logo AnsDesingn" class="logo">
+    <nav class="nav">
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sobre-mi.html">Sobre Mi</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+        <li><a href="promociones.html">Promociones</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- CONTENIDO -->
+<main class="container contacto">
+
+  <h1>Contacto</h1>
   <p>Completá el formulario para ponerte en contacto con <strong>AnsDesign</strong>.</p>
 
-  <form class="contact-form" id="contactForm" action="#" method="post">
-    <!-- campos del formulario -->
+  <form class="contact-form" action="#" method="post">
+
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="tu@mail.com" required>
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 1234 5678">
+    </div>
+
+    <div class="form-group">
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Escribí tu consulta o mensaje aquí" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="captcha">¿Cuánto es 5 + 3?</label>
+      <input type="text" id="captcha" name="captcha" placeholder="Respuesta" required>
+    </div>
+
+    <button type="submit">Enviar</button>
+
   </form>
 
-  <div class="contact-info">
-    <!-- datos de contacto -->
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2025 AnsDesingn. Todos los derechos reservados.</p>
   </div>
-</section>
+</footer>
 
-<!-- SCRIPT CAPTCHA solo aquí -->
+<!-- JS MENÚ -->
 <script>
-  const captchaText = document.getElementById('captcha-text');
-  const refreshBtn = document.getElementById('refresh-captcha');
-  const form = document.getElementById('contactForm');
-
-  function generarCaptcha() {
-    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-    let code = '';
-    for (let i = 0; i < 5; i++) {
-      code += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    captchaText.textContent = code;
-  }
-
-  refreshBtn.addEventListener('click', generarCaptcha);
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const userCaptcha = document.getElementById('captcha').value.toUpperCase();
-    if (userCaptcha === captchaText.textContent) {
-      alert('Formulario enviado correctamente. ¡Gracias por contactarte con AnsDesingn!');
-      form.reset();
-      generarCaptcha();
-    } else {
-      alert('El código de verificación no coincide. Por favor, intentá nuevamente.');
-    }
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle?.addEventListener('click', () => {
+    links.classList.toggle('open');
   });
-
-  generarCaptcha();
 </script>
+
+</body>
+</html>
+
